@@ -28,12 +28,6 @@ const Footer = () => {
         {/* Spiritual Divider */}
         <div className="spiritual-divider" />
 
-        {/* Copyright */}
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2025 Vaidikam | All Rights Reserved
-          </p>
-        </div>
       </div>
     </footer>
   );
