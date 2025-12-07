@@ -1,96 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Spiritual Saffron Theme */
+    --background: 40 100% 97%;
+    --foreground: 20 50% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 100% 99%;
+    --card-foreground: 20 50% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 100% 99%;
+    --popover-foreground: 20 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep Saffron */
+    --primary: 25 95% 45%;
+    --primary-foreground: 40 100% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Golden Yellow */
+    --secondary: 40 100% 70%;
+    --secondary-foreground: 20 50% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Warm Cream */
+    --muted: 40 60% 94%;
+    --muted-foreground: 20 30% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Orange */
+    --accent: 30 90% 55%;
+    --accent-foreground: 40 100% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warm Brown Border */
+    --border: 30 40% 80%;
+    --input: 30 40% 85%;
+    --ring: 25 95% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom Spiritual Colors */
+    --saffron: 25 95% 45%;
+    --saffron-light: 35 100% 60%;
+    --saffron-dark: 20 90% 35%;
+    --golden: 40 100% 50%;
+    --cream: 40 100% 97%;
+    --maroon: 0 60% 30%;
+    --flame-orange: 30 100% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-saffron: linear-gradient(135deg, hsl(25 95% 50%) 0%, hsl(40 100% 55%) 50%, hsl(35 100% 60%) 100%);
+    --gradient-flame: linear-gradient(180deg, hsl(40 100% 60%) 0%, hsl(25 95% 50%) 50%, hsl(20 90% 40%) 100%);
+    --gradient-sunrise: linear-gradient(135deg, hsl(40 100% 95%) 0%, hsl(35 100% 85%) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(35 95% 55%) 50%, hsl(40 100% 60%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 95% 45% / 0.2);
+    --shadow-glow: 0 0 30px hsl(40 100% 50% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(20 50% 30% / 0.15);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 100% 97%;
+    --sidebar-foreground: 20 50% 15%;
+    --sidebar-primary: 25 95% 45%;
+    --sidebar-primary-foreground: 40 100% 98%;
+    --sidebar-accent: 40 60% 94%;
+    --sidebar-accent-foreground: 20 50% 15%;
+    --sidebar-border: 30 40% 80%;
+    --sidebar-ring: 25 95% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 20 30% 8%;
+    --foreground: 40 60% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 30% 12%;
+    --card-foreground: 40 60% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 30% 12%;
+    --popover-foreground: 40 60% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 35 100% 55%;
+    --primary-foreground: 20 50% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 50% 25%;
+    --secondary-foreground: 40 60% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 20 30% 18%;
+    --muted-foreground: 40 40% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 30 80% 45%;
+    --accent-foreground: 40 100% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 20 30% 25%;
+    --input: 20 30% 25%;
+    --ring: 35 100% 55%;
+
+    --sidebar-background: 20 30% 10%;
+    --sidebar-foreground: 40 60% 95%;
+    --sidebar-primary: 35 100% 55%;
+    --sidebar-primary-foreground: 20 50% 10%;
+    --sidebar-accent: 20 30% 18%;
+    --sidebar-accent-foreground: 40 60% 95%;
+    --sidebar-border: 20 30% 25%;
+    --sidebar-ring: 35 100% 55%;
   }
 }
 
@@ -100,6 +118,130 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+  }
+
+  .font-devanagari {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-saffron {
+    background: var(--gradient-saffron);
+  }
+
+  .gradient-flame {
+    background: var(--gradient-flame);
+  }
+
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .watermark-bg {
+    position: relative;
+  }
+
+  .watermark-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-image: url('/src/assets/flame-logo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-input bg-card text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  .form-section {
+    @apply bg-card rounded-xl p-6 shadow-card border border-border;
+  }
+
+  .spiritual-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent my-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient-saffron {
+    background: var(--gradient-saffron);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-flame {
+    animation: flame 2s ease-in-out infinite;
+  }
+
+  @keyframes flame {
+    0%, 100% {
+      transform: scale(1) rotate(-1deg);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.02) rotate(1deg);
+      filter: brightness(1.1);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(40 100% 50% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(40 100% 50% / 0.5);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
