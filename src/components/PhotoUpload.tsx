@@ -16,12 +16,12 @@ const PhotoUpload = ({ value, onChange, error }: PhotoUploadProps) => {
     const file = e.target.files?.[0];
     if (file) {
       if (file.size > 5 * 1024 * 1024) {
-        alert("फ़ाइल का आकार 5MB से कम होना चाहिए");
+        alert("File size must be less than 5MB / फ़ाइल का आकार 5MB से कम होना चाहिए");
         return;
       }
       
       if (!file.type.startsWith("image/")) {
-        alert("कृपया केवल इमेज फ़ाइल अपलोड करें");
+        alert("Please upload only image files / कृपया केवल इमेज फ़ाइल अपलोड करें");
         return;
       }
 
@@ -45,7 +45,7 @@ const PhotoUpload = ({ value, onChange, error }: PhotoUploadProps) => {
   return (
     <div className="space-y-2">
       <label className="form-label">
-        पासपोर्ट साइज़ फोटो <span className="text-destructive">*</span>
+        Passport Size Photo (पासपोर्ट साइज़ फोटो) <span className="text-destructive">*</span>
       </label>
       
       <div
@@ -78,7 +78,7 @@ const PhotoUpload = ({ value, onChange, error }: PhotoUploadProps) => {
           <div className="flex flex-col items-center justify-center h-full text-muted-foreground p-4">
             <Camera className="w-10 h-10 mb-2 text-primary/60" />
             <span className="text-xs text-center font-devanagari">
-              फोटो अपलोड करें
+              Upload Photo (फोटो अपलोड करें)
             </span>
             <Upload className="w-5 h-5 mt-2 text-primary/40" />
           </div>
@@ -94,7 +94,7 @@ const PhotoUpload = ({ value, onChange, error }: PhotoUploadProps) => {
       </div>
       
       <p className="text-xs text-muted-foreground">
-        अधिकतम आकार: 5MB | फॉर्मेट: JPG, PNG
+        Max size: 5MB | Format: JPG, PNG (अधिकतम आकार: 5MB | फॉर्मेट: JPG, PNG)
       </p>
       
       {error && (

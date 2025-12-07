@@ -4,6 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Print Styles */
+@media print {
+  .print\\:hidden {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .form-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  header, footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
 @layer base {
   :root {
     /* Spiritual Saffron Theme */
